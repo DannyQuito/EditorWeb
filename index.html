@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor-Texto</title>
+    <link rel="stylesheet" href="index.css"><!---Mi enlace a mi cssEditar la apariencia----->
+</head>
+<body>
+    <!-- El contenido visible de tu página web va aquí -->
+    <div class="contenedorCabeza">
+        <h1 class="tituloCabeza">EDITOR DE TEXTO</h1>
+        <p>Grupo: Danny Quito, Sebastian Quiroz, Simao Ortega, Kevin Morocho, Joe Peñaloza </p>
+        <p>Ingresa en el siguente cuadro el texto que quieras</p>
+        <!-- Contenedor para los botones de formato -->
+        <div class="format-buttons">
+            <button type="button" onclick="formatText('justifyCenter')">Centrar</button>
+            <button type="button" onclick="formatText('justifyFull')">Justificar</button>
+            <!-- CAMBIADO A formatText('bold') -->
+            <button type="button" onclick="formatText('bold')">Negrita (B)</button>
+            <button type="button" onclick="formatText('italic')">Cursiva (I)</button>
+            <button type="button" onclick="copySelectedText()">Copiar</button>
+            <button type="button" onclick="pasteSelectedText()">(Cltr+v)</button>
+            <div>
+                <img src="donal1.gif" alt="McDonal" class="donal1">
+            </div>
+        </div>
+    </div>
+
+    <!---Cuadro de Entrada de datos para el editor----->
+    <div class="contenedorTexto">
+        <!-- Nuevo wrapper para el editor y los números -->
+        <div class="lineaIzquierda">
+        <div class="linea-numero" id="lineaNumero"></div>
+     
+        <!-- *** CÓDIGO MODIFICADO AQUÍ *** -->
+        <div id="campoTex" contenteditable="true" placeholder="Ingresa tu Texto"></div>
+        <!-- ******************************* -->
+        
+    </div>
+        <!------------------------------------------------->
+
+        <!---Boton para Obtener los datos----->
+        <button class="button1" type="button" onclick="entradaTexto()" >Generar Analisis</button>
+        <!------------------------------------------------->
+    </div>
+
+    <div class="contenedorConsola">
+        <p>CONSOLA</p>
+        <div id="salidaConsola">
+            <!-- El texto aparecerá aquí -->
+        </div>
+    </div>
+
+    <script src="index.js"></script> <!---Mi enlace a mi js Script----->
+    <audio id="audioConsola" src="audio1.mp3" preload="auto" controls></audio>
+</body>
+</html>

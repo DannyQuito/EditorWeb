@@ -1,0 +1,180 @@
+.contenedorCabeza{
+    /* Centra horizontalmente todo el texto dentro de este div */
+    text-align: center; 
+    margin-top: 1px; /* Un poco de espacio arriba */
+    width: 100%;
+    
+}
+
+/*Este es mi h1 use la clase tituloCabeza*/
+.tituloCabeza{
+    font-size: 44px;
+    color: rgb(0, 38, 255);
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+html, body {
+    background-color: lightblue; /* O el color que prefieras */
+    height: 100%;
+    margin: 0;
+    font-family: Arial; /* Para mejor visualización */
+}
+
+.linea-numero {
+    width: 40px; /* Ancho fijo para los números */
+    background-color: #f7f7f7;
+    color: #999;
+    text-align: right;
+    padding: 10px 5px 10px 0; /* Padding superior e inferior deben coincidir */
+    
+    /* Propiedades clave a igualar */
+    font-family: monospace; /* Fuente monoespaciada para alineación constante */
+    font-size: 20px;        /* MISMO TAMAÑO que campoTex */
+    line-height: 1.5;       /* Opcional: define una altura de línea explícita y úsala en ambos */
+
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    /* Esto es crucial: asegura que el div pueda "scrollearse" y oculte lo que no cabe */
+    overflow-y: scroll;
+
+    /*La misma altura que el campo de texto <Textarea>*/
+    height: 330px; 
+}
+
+
+/* 1. Define los pasos de la animación (movimiento de lado a lado) */
+@keyframes movimientoDona {
+    /* Comienza completamente fuera de la vista a la izquierda */
+    0% {
+        transform: translateX(-100vw);
+    }
+    /* Termina completamente fuera de la vista a la derecha */
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+/* 2. Aplica la animación a tu GIF */
+.donal1{
+    width: 150px; /* Ancho fijo para los números */
+    color: #999;
+    text-align: right;
+    
+    /* Configuración clave para la animación */
+    position: fixed; /* Lo saca del flujo de botones y lo fija a la ventana del navegador */
+    top: 150px; /* Ajusta esta medida para que esté a la altura correcta debajo de los botones */
+    
+    animation-name: movimientoDona; /* Usa la animación que definimos */
+    animation-duration: 7s; /* La duración de un viaje completo (ajusta la velocidad aquí) */
+    animation-timing-function: linear; /* Velocidad constante */
+    animation-iteration-count: infinite; /* Repetir para siempre */
+}
+
+.contenedorTexto{
+    /* Centra este bloque en la página */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos verticalmente (uno debajo del otro) */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;     /* Centra horizontalmente */
+
+
+    /* Le damos un tamaño y estilo para que parezca un "cuadro" centrado */
+    width: 90%;
+    max-width: 1000px;
+    padding: 5px;
+    background-color: rgb(100, 99, 99);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    
+    /* Truco para centrar este contenedor EN la página, ahora que el body ya no es flex */
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.lineaIzquierda {
+    display: flex;       /* Usa flexbox para ponerlos en fila */
+    width: 100%;         /* Ocupa todo el ancho disponible del contenedor padre */
+    box-sizing: border-box; /* Asegura que el padding no desborde */
+}
+
+/* Ajusta el campo de texto para que crezca y ocupe el espacio restante */
+#campoTex {
+    /* Mueve el estilo 'white-space: pre-wrap;' aquí desde el HTML */
+    white-space: pre-wrap; 
+    
+    width: 100%; /* Esto hace que el div ocupe el espacio restante junto al div de números */
+    height: 330px;
+    padding: 10px; /* Padding superior e inferior deben coincidir */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    /* resize: vertical; Esto ya no es necesario en un div */
+    margin-bottom: 0; 
+    overflow-y: auto; /* Añade scroll si el contenido es demasiado largo */
+    
+
+    /* Propiedades clave a igualar con .linea-numero */
+    font-size: 20px; /* MISMO TAMAÑO que linea-numero */
+    font-family: Arial, sans-serif; /* Asegúrate de que usas la misma fuente si es posible */
+    line-height: 1.5; /* Altura de línea consistente */
+    
+    /* Importante para que el cursor parpadee visiblemente en el div */
+    outline: none; 
+}
+
+.button1{
+    background-color:#001aff; /* Color de fondo azul */
+}
+
+
+.contenedorConsola{
+    /* Centra horizontalmente todo el texto dentro de este div */
+    text-align: left;
+    font-weight: bold;
+    width: 100%;
+    /* Añade un margen superior considerable para empujarlo hacia abajo de la página */
+    /* Ajusta este valor (e.g., 500px, 60vh, etc.) hasta que quede donde lo necesitas */
+    margin-top: 410px;
+    background-color: rgba(145, 145, 145, 0.795);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    /* Limita el ancho del contenedor, igual que en .contenedorTexto */
+    max-width: 800px; 
+    
+    /* Centra el bloque horizontalmente en la página */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Añade un padding y box-sizing para que el ancho se calcule bien */
+    padding: 10px;
+    box-sizing: border-box; 
+    /* Opcional: añade un borde/sombra para que parezca un cuadro */
+    border: 1px solid #000000;
+    border-radius: 8px;
+    height: 200px; /* Define una altura fija en píxeles (ajústala a tu gusto) */
+    overflow-y: scroll; /*auto: para que sea automatico*/
+    
+}
+
+#audioConsola{
+    display: block; /* Asegura que el elemento se comporte como un bloque */
+    margin: 0 auto; /* Establece los márgenes izquierdo y derecho automáticamente, centrando el elemento */
+    /* Añade un margen superior e inferior para separarlo */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button{
+    background-color: #ff0180; /* Color de fondo azul */
+    color: white;              /* Texto blanco */
+    padding: 10px 15px;        /* Espacio interno */
+    border: none;              /* Sin borde */
+    cursor: pointer;           /* Icono de manita al pasar el mouse */
+    border-radius: 4px;        /* Esquinas redondeadas */
+}
+
+button:hover {
+    background-color: #000000; /* Color más oscuro al pasar el mouse */
+}
